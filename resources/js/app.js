@@ -6,11 +6,10 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, h } from 'vue';
 
 // ***************************************************************
-// CAMBIOS AQUÍ:
-// 1. Eliminamos la importación incorrecta de '../../vendor/tightenco/ziggy'.
-// 2. Importamos la función `route` directamente de 'ziggy-js'.
+// ¡¡¡LÍNEA CLAVE CORREGIDA!!!
+// Importa la función `route` como una EXPORTACIÓN NOMBRADA desde 'ziggy-js'.
 // ***************************************************************
-import route from 'ziggy-js'; // Importa la función `route` desde el paquete instalado 'ziggy-js'
+import { route } from 'ziggy-js'; // <-- ¡Cambio aquí!
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -27,14 +26,11 @@ createInertiaApp({
         app.use(plugin);
 
         // ***************************************************************
-        // CAMBIOS AQUÍ:
-        // No usamos `.use(ZiggyVue)` porque el paquete no existe.
-        // En su lugar, hacemos que la función `route` de ziggy-js
-        // y el objeto global `Ziggy` (de @routes) estén disponibles
-        // globalmente en tus componentes Vue.
+        // Hacemos que la función `route` y el objeto `Ziggy` (global)
+        // estén disponibles en todos tus componentes Vue.
         // ***************************************************************
-        app.config.globalProperties.$route = route; // Para usar `this.$route('my.route')` en tus componentes
-        app.config.globalProperties.$ziggy = Ziggy; // El objeto `Ziggy` global (contiene todas las rutas)
+        app.config.globalProperties.$route = route; // Permite usar `this.$route('nombre.de.ruta')`
+        app.config.globalProperties.$ziggy = Ziggy; // Permite acceder al objeto `Ziggy` global si lo necesitas
 
         app.mount(el);
         return app;

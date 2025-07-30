@@ -1,0 +1,6 @@
+php artisan make:migration create_registro_socios_tables
+php artisan migrate:fresh --seed
+php artisan make:model SocioParqueo
+php artisan make:model VehiculoSocio
+
+php artisan make:controller RegistroSociosController

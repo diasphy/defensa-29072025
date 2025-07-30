@@ -1,0 +1,14 @@
+Migracion
+php artisan make:migration create_solicitud_credito_tables
+php artisan migrate:fresh --seed
+Modelos
+php artisan make:model Socio
+php artisan make:model Garante
+php artisan make:model SolicitudCredito
+
+Controllador
+php artisan make:controller SolicitudCreditoController
+
+Ejecutar todo
+
+php artisan migrate:fresh --seed

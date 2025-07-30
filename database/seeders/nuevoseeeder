@@ -1,0 +1,86 @@
+// NUEVO SUBMENU - PATRÓN SIMPLE
+$[nombre]SubMenu = SubMenu::firstOrCreate(['route' => '[ruta].index'], [
+    'menu_id' => $creditosMenu->id,
+    'name' => '[Nombre Módulo]',
+    'description' => '[Descripción del módulo]',
+    'icon' => '[fa-solid fa-icono]',
+    'is_active' => true,
+    'order' => [número],
+]);
+
+// AGREGAR AL SYNC DE PERMISOS (línea donde está el sync)
+$adminRole->subMenus()->sync([
+    $homeSubMenu->id => ['is_active' => true],
+    $solicitudesSubMenu->id => ['is_active' => true],
+    $[nombre]SubMenu->id => ['is_active' => true], // AGREGAR ESTA LÍNEA
+]);
+
+// DATOS MAESTRO
+$[maestros] = [
+    ['campo1' => 'valor1', 'campo2' => 'valor2'],
+    ['campo1' => 'valor3', 'campo2' => 'valor4'],
+    // más datos...
+];
+
+foreach ($[maestros] as $[maestro]) {
+    [ModeloMaestro]::firstOrCreate([
+        'campo1' => $[maestro]['campo1']
+    ], [
+        'campo1' => $[maestro]['campo1'],
+        'campo2' => $[maestro]['campo2'],
+        'estado' => 1
+    ]);
+}
+
+
+
+// NUEVO SUBMENU - PATRÓN CARRITO
+$[nombre]SubMenu = SubMenu::firstOrCreate(['route' => '[ruta].index'], [
+    'menu_id' => $creditosMenu->id,
+    'name' => '[Nombre Módulo]',
+    'description' => '[Descripción del módulo]',
+    'icon' => '[fa-solid fa-icono]',
+    'is_active' => true,
+    'order' => [número],
+]);
+
+// AGREGAR AL SYNC DE PERMISOS
+$adminRole->subMenus()->sync([
+    $homeSubMenu->id => ['is_active' => true],
+    $solicitudesSubMenu->id => ['is_active' => true],
+    $[nombre]SubMenu->id => ['is_active' => true], // AGREGAR ESTA LÍNEA
+]);
+
+
+// DATOS MAESTRO
+$[maestros] = [
+    ['campo1' => 'valor1', 'campo2' => 'valor2'],
+    ['campo1' => 'valor3', 'campo2' => 'valor4'],
+];
+
+foreach ($[maestros] as $index => $[maestroData]) {
+    $[maestro] = [ModeloMaestro]::firstOrCreate([
+        'campo1' => $[maestroData]['campo1']
+    ], [
+        'campo1' => $[maestroData]['campo1'],
+        'campo2' => $[maestroData]['campo2'],
+        'estado' => 1
+    ]);
+
+    // CREAR DETALLES PARA ESTE MAESTRO
+    $[detalles] = [
+        ['campo1' => 'detalle1', 'campo2' => 'detalle2'],
+        ['campo1' => 'detalle3', 'campo2' => 'detalle4'],
+    ];
+
+    foreach ($[detalles] as $[detalleData]) {
+        [ModeloDetalle]::firstOrCreate([
+            'id_[maestro]' => $[maestro]->id,
+            'campo1' => $[detalleData]['campo1']
+        ], [
+            'id_[maestro]' => $[maestro]->id,
+            'campo1' => $[detalleData]['campo1'],
+            'campo2' => $[detalleData]['campo2']
+        ]);
+    }
+}

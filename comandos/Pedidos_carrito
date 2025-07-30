@@ -1,0 +1,22 @@
+# Paso 1: Migración
+php artisan make:migration create_pedidos_sistema_tables
+
+# Paso 2: Modelos
+php artisan make:model Cliente
+php artisan make:model Pedido
+php artisan make:model DetallePedido
+
+# Paso 3: Controlador
+php artisan make:controller PedidosController
+
+# Paso 4: Migrar y seedear
+php artisan migrate:fresh --seed
+
+# Crear carpeta Pages/Pedidos
+mkdir resources/js/Pages/Pedidos
+
+# Crear archivo Vue (Windows)
+type nul > resources/js/Pages/Pedidos/Index.vue
+
+# Crear archivo Vue (Linux/Mac)
+touch resources/js/Pages/Pedidos/Index.vue

@@ -1,0 +1,12 @@
+php artisan make:migration create_parqueo_tables
+
+php artisan migrate:refresh
+php artisan migrate
+php artisan migrate:fresh --seed
+
+php artisan make:model Vehiculo
+php artisan make:model EntradaParqueo  
+php artisan make:model SalidaParqueo
+
+php artisan make:controller ParqueoController
+

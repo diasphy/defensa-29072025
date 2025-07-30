@@ -1,0 +1,13 @@
+Paso 1: Comandos para Crear las Migraciones
+php artisan make:migration create_system_management_tables
+
+php artisan make:migration add_role_id_to_users_table --table=users
+
+php artisan db:seed
+php artisan migrate
+
+MODELOS 
+php artisan make:model Role
+php artisan make:model Menu
+php artisan make:model SubMenu
+

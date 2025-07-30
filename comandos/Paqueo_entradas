@@ -1,0 +1,9 @@
+php artisan make:migration create_parqueo_central_park_tables
+
+php artisan migrate:refresh
+php artisan migrate
+php artisan migrate:fresh --seed
+php artisan make:model VehiculoCentral
+php artisan make:model EntradaCentral
+
+php artisan make:controller CentralParkController

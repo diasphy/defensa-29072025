@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Solo esto, nada más */
+@media (max-width: 768px) {
+    .xl\:grid-cols-3 { grid-template-columns: 1fr !important; }
+    .xl\:col-span-2 { grid-column: span 1 !important; }
+    .grid-cols-3 { grid-template-columns: 1fr !important; }
+    .grid-cols-4 { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 480px) {
+    .grid-cols-4 { grid-template-columns: 1fr !important; }
+}

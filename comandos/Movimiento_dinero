@@ -1,0 +1,16 @@
+Migracion
+php artisan make:migration create_movimiento_dinero_tables
+
+php artisan migrate:refresh
+php artisan migrate
+
+php artisan migrate:fresh --seed
+
+Modelos 
+php artisan make:model SocioBanco
+php artisan make:model Cuenta  
+php artisan make:model Operacion
+
+Controlador
+php artisan make:controller MovimientoController
+

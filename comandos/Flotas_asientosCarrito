@@ -1,0 +1,23 @@
+# Paso 1: Migración
+php artisan make:migration create_flotas_asientos_tables
+
+# Paso 2: Modelos
+php artisan make:model Flota
+php artisan make:model Asiento
+
+# Paso 3: Controlador
+php artisan make:controller FlotasAsientosController
+
+# Paso 4: Migrar y seedear
+php artisan migrate:fresh --seed
+
+
+Comandos para carpeta
+# Crear carpeta Pages/FlotasAsientos
+mkdir resources/js/Pages/FlotasAsientos
+
+# Crear archivo Vue (Windows)
+type nul > resources/js/Pages/FlotasAsientos/Index.vue
+
+# Crear archivo Vue (Linux/Mac)
+touch resources/js/Pages/FlotasAsientos/Index.vue

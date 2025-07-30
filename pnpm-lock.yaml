@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      ziggy-js:
+        specifier: ^2.5.3
+        version: 2.5.3
     devDependencies:
       '@inertiajs/vue3':
         specifier: ^2.0.0
@@ -470,6 +474,9 @@ packages:
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
+
+  '@types/qs@6.14.0':
+    resolution: {integrity: sha512-eOunJqu0K1923aExK6y8p6fsihYEn/BYuQ4g0CxAAgFc4b/ZLN4CrsRZ55srTdqoiLzU2B2evC+apEIxprEzkQ==}
 
   '@vitejs/plugin-vue@5.2.4':
     resolution: {integrity: sha512-7Yx/SXSOcQq5HiiV3orevHUFn+pmMB4cgbEkDYgnkUWb0WfeQ/wa2yFv6D5ICiCQOVpjA7vYDXrC7AGO8yjDHA==}
@@ -1069,6 +1076,10 @@ packages:
     resolution: {integrity: sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w==}
     engines: {node: '>=0.6'}
 
+  qs@6.9.7:
+    resolution: {integrity: sha512-IhMFgUmuNpyRfxA90umL7ByLlgRXu6tIfKPpF5TmcfRLlLCckfP/g3IQmju6jjpu+Hh8rA+2p6A27ZSPOOHdKw==}
+    engines: {node: '>=0.6'}
+
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -1306,6 +1317,9 @@ packages:
   yargs@17.7.2:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
     engines: {node: '>=12'}
+
+  ziggy-js@2.5.3:
+    resolution: {integrity: sha512-fdlGmRpG6I7yqGicIm6xYXhfbYZHjjb5fPHF5xekK6RLQRgOgLXzEg1R6GUgmF3qPAuKTHhAJ3EUfZ86LyMGeg==}
 
 snapshots:
 
@@ -1602,6 +1616,8 @@ snapshots:
       vite: 7.0.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.0)
 
   '@types/estree@1.0.8': {}
+
+  '@types/qs@6.14.0': {}
 
   '@vitejs/plugin-vue@5.2.4(vite@7.0.6(jiti@2.5.1)(lightningcss@1.30.1)(yaml@2.8.0))(vue@3.5.18)':
     dependencies:
@@ -2171,6 +2187,8 @@ snapshots:
     dependencies:
       side-channel: 1.1.0
 
+  qs@6.9.7: {}
+
   queue-microtask@1.2.3: {}
 
   read-cache@1.0.0:
@@ -2436,3 +2454,8 @@ snapshots:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 21.1.1
+
+  ziggy-js@2.5.3:
+    dependencies:
+      '@types/qs': 6.14.0
+      qs: 6.9.7
